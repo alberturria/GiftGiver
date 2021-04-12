@@ -5,5 +5,17 @@ exports[`should render the react root node 1`] = `
   <h2>
     Gift Giver
   </h2>
+  <div
+    className="gifts-list"
+  />
+  <Button
+    active={false}
+    className="button-add-gift"
+    disabled={false}
+    onClick={[Function]}
+    variant="primary"
+  >
+    Add Gift
+  </Button>
 </div>
 `;
