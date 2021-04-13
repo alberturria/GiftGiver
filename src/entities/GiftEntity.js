@@ -1,7 +1,7 @@
 export default class GiftEntity{
-    constructor(id, name, description) {
+    constructor(id, person, present) {
         this.id = id;
-        this.name = name;
-        this.description = description;
+        this.person = person;
+        this.present = present;
     }
 }

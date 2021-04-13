@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render the react root node 1`] = `
+exports[`App should render the react root node 1`] = `
 <div>
   <h2>
     Gift Giver
