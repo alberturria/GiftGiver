@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import GiftEntity from '../entities/GiftEntity';
+import { maxNumber } from '../utils';
+import Gift from './Gift';
+import './index.css';
 
 export default class App extends Component {
     constructor() {
@@ -11,9 +14,9 @@ export default class App extends Component {
 
     addGift = () => {
         const { gifts } = this.state;
-        const existingIds = gifts.map( gift =>  gift.id);
-        const maxId = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 0;
-        const newGift = new GiftEntity(maxId)
+        const existingIds = gifts.map( gift => gift.id);
+        const maxId = maxNumber(existingIds);
+        const newGift = new GiftEntity(maxId + 1)
         gifts.push(newGift);
 
         this.setState({ gifts });
@@ -22,7 +25,14 @@ export default class App extends Component {
     _renderGifts = () => {
         const { gifts } = this.state;
 
-        return gifts.map(gift => <div key={gift.id} />);
+        return gifts.map(gift => <Gift key={gift.id} gift={new GiftEntity(gift.id)} removeGiftCallback={this.removeGift} />);
+    }
+
+    removeGift = (giftId) => {
+        const { gifts } = this.state;
+        const newGifts = gifts.filter(gift => gift.id !== giftId);
+
+        this.setState( {gifts: newGifts });
     }
 
     render() {

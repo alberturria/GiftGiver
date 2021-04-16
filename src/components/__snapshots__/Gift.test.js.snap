@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gift Should've rendered a Gift component 1`] = `
-<div>
+<div
+  className="gift"
+>
   <Form
     inline={false}
   >
@@ -17,6 +19,27 @@ exports[`Gift Should've rendered a Gift component 1`] = `
         onChange={[Function]}
       />
     </FormGroup>
+    <FormGroup>
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Present
+      </FormLabel>
+      <FormControl
+        className="input-present"
+        onChange={[Function]}
+      />
+    </FormGroup>
   </Form>
+  <Button
+    active={false}
+    className="delete-gift-button"
+    disabled={false}
+    onClick={[Function]}
+    variant="primary"
+  >
+    Remove Gift
+  </Button>
 </div>
 `;
